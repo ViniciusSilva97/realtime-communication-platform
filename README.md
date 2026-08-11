@@ -47,3 +47,22 @@ Fluxo obrigatório:
 `Issue -> branch -> implementação -> testes -> code review -> Pull Request -> merge -> release`
 
 Não desenvolver funcionalidades diretamente na `main`.
+
+## Desenvolvimento local com Docker
+
+### Pré-requisitos
+
+- Docker Desktop
+- Docker Compose
+- Git
+
+Não é necessário instalar Elixir, Erlang ou PostgreSQL diretamente no host.
+
+### Preparar o ambiente
+
+```bash
+docker compose build
+docker compose run --rm app mix deps.get
+docker compose up -d db
+docker compose run --rm app mix ecto.create
+docker compose run --rm app mix ecto.migrate
