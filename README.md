@@ -12,24 +12,9 @@ Plataforma de comunicação em tempo real criada para evoluir de um caso de uso 
 - Phoenix Presence
 - ExUnit
 
-Etapas posteriores deverão avaliar WebRTC/SFU para mídia e Kotlin + Jetpack Compose para o cliente Android.
-
 ## v0.1.0 — Realtime Foundation
 
-Objetivo: dois usuários autenticados devem conseguir participar de uma conversa autorizada, visualizar presença online/offline e trocar mensagens persistentes em tempo real.
-
-Escopo:
-
-1. bootstrap Phoenix/Ecto;
-2. PostgreSQL;
-3. Accounts/Auth;
-4. Conversations;
-5. Messages;
-6. Phoenix Channels;
-7. Phoenix Presence;
-8. testes automatizados.
-
-Áudio, vídeo, live, Android, pagamentos e moeda digital não pertencem à v0.1.0.
+A primeira versão valida autenticação, conversas autorizadas, persistência, Channels e Presence. Áudio, vídeo, live, Android, pagamentos e moeda digital não pertencem à v0.1.0.
 
 ## Documentação
 
@@ -60,9 +45,51 @@ Não é necessário instalar Elixir, Erlang ou PostgreSQL diretamente no host.
 
 ### Preparar o ambiente
 
+Copie o arquivo de exemplo e mantenha o arquivo `.env` somente no ambiente local:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+No Linux ou macOS:
+
+```bash
+cp .env.example .env
+```
+
+Os valores do exemplo são exclusivos para desenvolvimento local e não devem ser reutilizados em produção.
+
+### Criar banco e executar testes
+
 ```bash
 docker compose build
 docker compose run --rm app mix deps.get
 docker compose up -d db
 docker compose run --rm app mix ecto.create
 docker compose run --rm app mix ecto.migrate
+docker compose run --rm app mix test
+```
+
+### Iniciar a aplicação
+
+```bash
+docker compose up app
+```
+
+Acesse <http://localhost:4000>.
+
+### Encerrar o ambiente
+
+Preserve os dados locais:
+
+```bash
+docker compose down
+```
+
+Remova também o banco e os volumes locais:
+
+```bash
+docker compose down -v
+```
+
+O comando com `-v` apaga dados locais de desenvolvimento e deve ser usado conscientemente.
