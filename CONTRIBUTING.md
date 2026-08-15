@@ -46,3 +46,7 @@ Nunca incluir senhas, tokens, chaves privadas, arquivos `.env` reais ou dados pe
 ## Definição de pronto
 
 Uma mudança está pronta quando atende à issue, possui testes adequados, não introduz regressões conhecidas, respeita os limites arquiteturais e atualiza documentação quando necessário.
+
+## Licenciamento das contribuições
+
+Ao enviar uma contribuição, o autor declara possuir os direitos necessários e concorda com a seção **Contribuições ao projeto** do arquivo [LICENSE](LICENSE), inclusive com a autorização concedida ao titular para uso comercial e relicenciamento da contribuição. Dependências e materiais de terceiros devem ser identificados e permanecer sob suas licenças originais.
