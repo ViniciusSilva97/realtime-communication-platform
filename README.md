@@ -47,3 +47,9 @@ Fluxo obrigatório:
 `Issue -> branch -> implementação -> testes -> code review -> Pull Request -> merge -> release`
 
 Não desenvolver funcionalidades diretamente na `main`.
+
+## Licença
+
+Este projeto é disponibilizado como código-fonte disponível (*source available*) exclusivamente para uso interno. Ele não é oferecido como software *open source*. Revenda, redistribuição, exploração comercial e oferta como SaaS ou serviço gerenciado são proibidas sem autorização prévia e escrita do titular.
+
+Consulte o arquivo [LICENSE](LICENSE) para conhecer os termos completos. Componentes de terceiros permanecem sujeitos às suas próprias licenças.
